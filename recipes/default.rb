@@ -17,7 +17,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# XXX AF Hack I added in to get around this issue:
+# http://tickets.opscode.com/browse/CHEF-3912?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel
+# Can be removed once fixed in chef.
 chef_gem "rubyzip" do
+  options ( "-p http://10.10.20.28:3128" )
+  version "0.9.5"  
 end
 require 'zip/zip'
 
